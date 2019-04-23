@@ -78,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     <div class="bigcontain">
     <h2>Gallery!</h2>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="gallery.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="100000000">
 		<input type="file" name="file_upload" class="btn btn-outline-info">
         <input type="submit" name="submit" value="Upload" class="btn btn-outline-info">
@@ -94,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 				// don't display the . and .. directories. Using the strpos() for this.
 				if(strpos($file,'.') > 0){
                     echo "<div class ='img'>";
-                    echo "<a href='$upload_dir/$file'><img src='$upload_dir/$file' height='200px'></a><br>";
+                    echo "<a href='$upload_dir/$file'><img alt='' src='$upload_dir/$file' height='200'></a><br>";
                     echo "<a class='delete' href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file" . "'>" ."Delete</a>";
                     echo '</div><br>';
 				}
