@@ -30,10 +30,10 @@ margin-bottom:40px;
 .contain{
     
     display:flex;
-  
+    flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
-    border: solid 2px #f7ce3e;
+    border: solid 5px #f7ce3e;
     padding:20px;
 
     
@@ -42,20 +42,38 @@ margin-bottom:40px;
 .img{
     padding:50px;
     padding-top:20px;
-    background-color:whitesmoke;
- 
     margin:10px;
-    box-shadow: 5px 10px #f7ce3e;
+    border: solid 3px #ff3b3f;
     color:black;
      
 }
 
-.img a{
+.delete{
     text-align:center;
     display:block;
-    background-color:#0a1612;
+    border: solid 2px #008f95;
     color:white;
     padding:5px;
     margin-top:20px;
 
 } 
+
+.delete:hover{
+background-color:#008f95;
+
+}
+
+.img:hover{
+    position: relative;
+    animation: single_rotate 3s linear infinite;
+}
+
+@keyframes single_rotate {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+img{
+    border: solid 2px #57bc90;
+}

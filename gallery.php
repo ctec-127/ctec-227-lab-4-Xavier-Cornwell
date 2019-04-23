@@ -94,9 +94,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 				// don't display the . and .. directories. Using the strpos() for this.
 				if(strpos($file,'.') > 0){
                     echo "<div class ='img'>";
-                    echo "<img src='$upload_dir/$file' height='200px'><br>";
-                    echo "<p>$target_file</p>";
-                    echo "<a href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file" . "'>" ."Delete</a>";
+                    echo "<a href='$upload_dir/$file'><img src='$upload_dir/$file' height='200px'></a><br>";
+                    echo "<a class='delete' href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file" . "'>" ."Delete</a>";
                     echo '</div><br>';
 				}
 			}
