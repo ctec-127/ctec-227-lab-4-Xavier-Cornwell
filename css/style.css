@@ -1,19 +1,40 @@
 body{
     width:100%;
+    background-color:#1a2930;
+    color:white;
+    font-family: 'Hind Madurai', sans-serif;
+    
 }
 
 .bigcontain{
     width:80%;
-    background-color:burlywood;
     margin-top:50px;
     padding:100px;
     margin:0 auto;
+    background-color:#1a2930;
+}
+
+
+h2{
+    text-align:center;
+    display:block;
+    margin:0 auto;
+    margin-bottom:20px;
+}
+form{
+text-align:center;
+display:block;
+margin:0 auto;
+margin-bottom:40px;
 }
 .contain{
     
     display:flex;
+  
     justify-content: center;
     justify-items: center;
+    border: solid 2px #f7ce3e;
+    padding:20px;
 
     
 }
@@ -22,16 +43,19 @@ body{
     padding:50px;
     padding-top:20px;
     background-color:whitesmoke;
+ 
     margin:10px;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 5px 10px #f7ce3e;
+    color:black;
+     
 }
 
 .img a{
     text-align:center;
     display:block;
-    background-color:brown;
+    background-color:#0a1612;
     color:white;
     padding:5px;
     margin-top:20px;
 
-}
+} 

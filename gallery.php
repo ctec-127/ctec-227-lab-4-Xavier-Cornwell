@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>File Uploads Part 1</title>
+    <title>File Uploads Part 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
 
@@ -77,8 +80,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <h2>Gallery!</h2>
     <form action="" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="MAX_FILE_SIZE" value="100000000">
-		<input type="file" name="file_upload">
-		<input type="submit" name="submit" value="Upload">
+		<input type="file" name="file_upload" class="btn btn-outline-info">
+        <input type="submit" name="submit" value="Upload" class="btn btn-outline-info">
 	</form>
 <div class="contain"> 
 
@@ -91,16 +94,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 				// don't display the . and .. directories. Using the strpos() for this.
 				if(strpos($file,'.') > 0){
                     echo "<div class ='img'>";
-                    echo "<h3> Name of File:</h3>";
-                    echo "<p>$target_file</p>";
                     echo "<img src='$upload_dir/$file' height='200px'><br>";
-                    echo "<a href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file"  . "'>" ."Delete</a>";
+                    echo "<p>$target_file</p>";
+                    echo "<a href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file" . "'>" ."Delete</a>";
                     echo '</div><br>';
 				}
 			}
         }
         else{
-            echo 'no dir';
+            echo 'no photos';
         } // end of if
 
       
