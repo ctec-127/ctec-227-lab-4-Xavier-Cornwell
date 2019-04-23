@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>File Uploads Part 1</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 
 <?php 
-
+//getting the values of the parameter and checking if its set.
 if (isset($_GET['up']) && isset($_GET['fil'])){
 
  
@@ -69,7 +70,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                         "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
                         $_SERVER['REQUEST_URI']; 
           
+?>
 
+
+    <div class="bigcontain">
+    <h2>Gallery!</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value="100000000">
+		<input type="file" name="file_upload">
+		<input type="submit" name="submit" value="Upload">
+	</form>
+<div class="contain"> 
+
+
+<?php
 		// another approach is to read in contents of directory to an array
 		if(is_dir($upload_dir)){
 			$dir_array = scandir($upload_dir);
@@ -77,7 +91,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 				// don't display the . and .. directories. Using the strpos() for this.
 				if(strpos($file,'.') > 0){
                     echo "<div class ='img'>";
-                    echo "<img src='$upload_dir/$file'><br>";
+                    echo "<h3> Name of File:</h3>";
+                    echo "<p>$target_file</p>";
+                    echo "<img src='$upload_dir/$file' height='200px'><br>";
                     echo "<a href='$link?up=" . "$upload_dir" . "&" . "fil=" . "$file"  . "'>" ."Delete</a>";
                     echo '</div><br>';
 				}
@@ -91,9 +107,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
         ?> 
+</div>
 
-
-
+</div>
 
 
 
@@ -106,10 +122,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-	<form action="" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="MAX_FILE_SIZE" value="100000000">
-		<input type="file" name="file_upload">
-		<input type="submit" name="submit" value="Upload">
-	</form>
+
 </body>
 </html>
